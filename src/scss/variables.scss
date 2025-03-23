@@ -1,1 +1,42 @@
-$font-red: red;
+$dark-primary: #2A254B;
+$primary: #4E4D93;
+$light: Gray #F9F9F9;
+$border: Gray #EBE8F4;
+$white: #FFFFFF;
+$border-dark: #CAC6DA;
+
+%fontfw-and-lineh {
+  font-weight: 400;
+  line-height: 150%;
+  font-family: 'Clash Display';
+}
+
+%font-style-36 {
+  font-size: 36pt;
+  @extend %fontfw-and-lineh;
+}
+
+%font-style-32 {
+  font-size: 32pt;
+  @extend %fontfw-and-lineh;
+}
+
+%font-style-24 {
+  font-size: 24pt;
+  @extend %fontfw-and-lineh;
+}
+
+%font-style-20 {
+  font-size: 20pt;
+  @extend %fontfw-and-lineh;
+}
+
+%font-style-16 {
+  font-size: 16pt;
+  @extend %fontfw-and-lineh;
+}
+
+%font-style-h6 {
+  font-size: 14pt;
+  @extend %fontfw-and-lineh;
+}

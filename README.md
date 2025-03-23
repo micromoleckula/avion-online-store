@@ -7,3 +7,12 @@
 ## Design
 
 You can see the design of the project by following this link: [Figma](https://www.figma.com/file/EJerFs9YOizbHdA3szucNW/Avion?type=design&node-id=1-3&mode=design&t=BjfpNtKAmbCK4rGA-0)
+
+What I use to create the project
+
+• HTML
+• SCSS
+• JS
+• Vite
+• AJAX
+• JSON Server
