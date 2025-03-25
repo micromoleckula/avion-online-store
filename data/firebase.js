@@ -1,4 +1,4 @@
-/* import { initializeApp } from "firebase/app";
+import { initializeApp } from "firebase/app";
 import { getDatabase, ref, set, get } from "firebase/database";
 
 const firebaseConfig = {
@@ -14,25 +14,12 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
-function writePost(id, title, content) {
-  return set(ref(db, `/posts/${id}`), {
-    title,
-    content
-  })
-    .then(() => console.log(`✅ Пост ${id} записаний!`))
-    .catch(error => console.error(`❌ Помилка запису:`, error));
+export function writePost(id, title, content) {
+  return set(ref(db, `/posts/${id}`), { title, content });
 }
 
-function readPosts() {
-  get(ref(db, "/posts"))
-    .then(snapshot => {
-      if (snapshot.exists()) {
-        console.log("📌 Отримані пости:", snapshot.val());
-      } else {
-        console.log("⚠ Даних немає");
-      }
-    })
-    .catch(error => console.error("❌ Помилка читання:", error));
+export function readPosts() {
+  return get(ref(db, "/posts")).then(snapshot => (snapshot.exists() ? snapshot.val() : null));
 }
 
-export { writePost, readPosts }; */
+export { db };
