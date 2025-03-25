@@ -40,8 +40,51 @@ function readPosts() {
     .catch(error => console.error("❌ Помилка читання:", error));
 }
 
-// Записуємо тестовий пост
-writePost("1", "Новий пост", "Дані збережено у Firebase!");
+// Обробка події submit форми
+document.getElementById("post-form").addEventListener("submit", function(event) {
+  event.preventDefault(); // Запобігаємо перезавантаженню сторінки при відправці форми
+
+  // Отримуємо значення з форми
+  const title = document.getElementById("title").value;
+  const content = document.getElementById("content").value;
+
+  // Генеруємо ID для нового поста (наприклад, на основі поточного часу)
+  const id = Date.now(); // Використовуємо мілісекунди для унікальності
+
+  // Записуємо новий пост у Firebase
+  writePost(id, title, content)
+    .then(() => {
+      // Показуємо повідомлення про успішний запис
+      document.getElementById("message").innerHTML = "Пост успішно додано!";
+      
+      // Очищаємо форму після запису
+      document.getElementById("post-form").reset();
+    })
+    .catch(error => {
+      document.getElementById("message").innerHTML = `Помилка: ${error.message}`;
+    });
+});
+
+// Виведення в DOM
+app.innerHTML = `
+  <h1 class="hello">hello</h1>
+
+  <!-- Форма для додавання поста -->
+  <form id="post-form">
+    <label for="title">Заголовок:</label>
+    <input type="text" id="title" name="title" required>
+
+    <label for="content">Контент:</label>
+    <textarea id="content" name="content" required></textarea>
+
+    <button type="submit">Додати пост</button>
+  </form>
+
+  <div id="message"></div>
+
+  <!-- Кнопка для завантаження постів вручну -->
+  <button id="load-posts">Завантажити пости</button>
+`;
 
 // Читаємо пости через 1 секунду після запису
 setTimeout(() => {
@@ -52,9 +95,3 @@ setTimeout(() => {
 document.getElementById("load-posts").addEventListener("click", () => {
   readPosts();
 });
-
-// Виведення в DOM для тесту
-app.innerHTML = `
-  <h1 class="hello">hello</h1>
-  <button id="load-posts">Завантажити пости</button>
-`;
