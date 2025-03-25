@@ -1,8 +1,8 @@
-@import "normalize.css";
-@import 'fonts.scss';
-@import 'variables.scss';
+@use "normalize.css";
+@use 'fonts';
+@use 'variables' as *;
 
-.hello {
+#appka {
   color: $dark-primary;
   @extend %font-style-36;
 }

@@ -15,4 +15,5 @@ What I use to create the project
 • JS
 • Vite
 • AJAX
-• JSON Server
+• Firebase
+• Netlify

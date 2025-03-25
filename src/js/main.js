@@ -1,6 +1,6 @@
+import '../scss/style.scss';
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, set, get } from "firebase/database";
-import '../scss/style.scss';
 
 // Підключаємо Firebase
 const firebaseConfig = {
@@ -65,27 +65,6 @@ document.getElementById("post-form").addEventListener("submit", function(event) 
     });
 });
 
-// Виведення в DOM
-app.innerHTML = `
-  <h1 class="hello">hello</h1>
-
-  <!-- Форма для додавання поста -->
-  <form id="post-form">
-    <label for="title">Заголовок:</label>
-    <input type="text" id="title" name="title" required>
-
-    <label for="content">Контент:</label>
-    <textarea id="content" name="content" required></textarea>
-
-    <button type="submit">Додати пост</button>
-  </form>
-
-  <div id="message"></div>
-
-  <!-- Кнопка для завантаження постів вручну -->
-  <button id="load-posts">Завантажити пости</button>
-`;
-
 // Читаємо пости через 1 секунду після запису
 setTimeout(() => {
   readPosts();
@@ -95,3 +74,7 @@ setTimeout(() => {
 document.getElementById("load-posts").addEventListener("click", () => {
   readPosts();
 });
+
+appka.innerHTML = `
+  <h1>Hello</h1>
+`

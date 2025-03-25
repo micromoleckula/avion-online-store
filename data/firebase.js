@@ -1,7 +1,6 @@
-import { initializeApp } from "firebase/app";
+/* import { initializeApp } from "firebase/app";
 import { getDatabase, ref, set, get } from "firebase/database";
 
-// Конфігурація Firebase
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
@@ -12,11 +11,9 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
-// Ініціалізація Firebase
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
-// Функція для запису даних у Firebase
 function writePost(id, title, content) {
   return set(ref(db, `/posts/${id}`), {
     title,
@@ -26,7 +23,6 @@ function writePost(id, title, content) {
     .catch(error => console.error(`❌ Помилка запису:`, error));
 }
 
-// Функція для зчитування постів
 function readPosts() {
   get(ref(db, "/posts"))
     .then(snapshot => {
@@ -39,5 +35,4 @@ function readPosts() {
     .catch(error => console.error("❌ Помилка читання:", error));
 }
 
-// Експортуємо функції
-export { writePost, readPosts };
+export { writePost, readPosts }; */
