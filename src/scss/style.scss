@@ -1,4 +1,4 @@
+@forward 'variables';
 @use 'normalize.css';
 @use 'fonts';
-@use 'variables' as *;
 @use '../components/header/header.scss';
