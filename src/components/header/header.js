@@ -9,7 +9,6 @@ export const headerComponent = `
       <img src="/images/svg/shopping--cart.svg" alt="shopping--cart">
       <img src="/images/svg/user--avatar.svg" alt="user--avatar">
     </div>
-    <!-- Burger icon (only visible on mobile) -->
     <div class="header__buttons--mobile">
       <div class="header__loop--mobile"> 
         <img src="/images/svg/search.svg" alt="search">
@@ -26,7 +25,6 @@ export const headerComponent = `
 
   <div class="header__line"></div>
 
-  <!-- Mobile menu (hidden by default) -->
   <nav class="header__mobile-menu">
     <div class="header__user-mobile">
       <img src="/images/svg/shopping--cart.svg" alt="shopping--cart">
@@ -43,7 +41,6 @@ export const headerComponent = `
     </ul>
   </nav>
 
-  <!-- Desktop menu (always visible on large screens) -->
   <div class="header__bottom">
     <ul class="header__list">
       <li><a href="#" class="header__list__item">Plant pots</a></li>

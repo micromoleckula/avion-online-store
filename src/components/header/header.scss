@@ -14,27 +14,11 @@
   justify-content: space-between;
 }
 
-.header__loop {
-  display: none;
-  width: 75px;
-}
-
-.header__line {
-  display: none;
-}
-
 .header__list {
   list-style: none;
   padding: 0;
   margin: 10px 0;
   display: block;
-
-  @media screen and (min-width: 62.5em) {
-    display: flex;
-    gap: 45px;
-    justify-content: center;
-    margin: 10px 0;
-  }
 }
 
 .header__list__item {
@@ -44,17 +28,14 @@
 }
 
 .header__user-mobile,
-.header__user {
+.header__user,
+.header__line,
+.header__loop,
+.header__bottom {
   display: none;
-}
-
-.header__user {
-  display: flex;
-  gap: 20px;
 }
 
 .header__burger {
-  display: none;
   cursor: pointer;
   background: none;
   border: none;
@@ -96,6 +77,7 @@
 }
 
 .header__mobile-menu {
+  display: block;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease-in-out;
@@ -105,87 +87,45 @@
   max-height: 400px;
 }
 
-.header__bottom {
-  display: block;
-}
-
 .header__left--mobile {
   display: flex;
   gap: 20px;
 }
 
-.header__loop--mobile {
+.header__loop--mobile,
+.header__burger {
   display: block;
 }
 
-@media screen and (max-width: 62.5em) {
-  .header__buttons--mobile {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-  }
-  .header__burger {
-    display: block;
-  }
-
-  .header__mobile-menu {
-    display: block;
-  }
-
-  .header__user-mobile {
-    display: flex;
-    gap: 20px;
-  }
-
-  .header__user {
-    display: none;
-  }
-
-  .header__bottom {
-    display: none;
-  }
-
-  .header__list {
-    display: block;
-    margin: 10px 0;
-  }
-
-  .header__loop--mobile {
-    display: block;
-  }
+.header__user-mobile,
+.header__buttons--mobile {
+  display: flex;
+  gap: 20px;
 }
 
 @media screen and (min-width: 62.5em) {
-  .header__left--mobile,
-  .header__burger {
-    display: none;
-  }
-
   .header__top {
     justify-content: baseline;
   }
 
-  .header__loop {
+  .header__loop, 
+  .header__bottom {
     display: block;
   }
 
-  .header__buttons--mobile {
-    display: none;
-  }
-
-  .header__loop--mobile {
+  .header__buttons--mobile, 
+  .header__loop--mobile, 
+  .header__mobile-menu,
+  .header__user-mobile,
+  .header__left--mobile,
+  .header__burger  {
     display: none;
   }
 
   .header__line {
     display: block;
     height: 1px;
-    color: black;
-  }
-
-  .header__mobile-menu,
-  .header__user-mobile {
-    display: none;
+    color: $line-header;
   }
 
   .header__user {
@@ -197,11 +137,5 @@
     display: flex;
     gap: 45px;
     justify-content: center;
-    margin: 10px 0;
-    padding: 0;
-  }
-
-  .header__bottom {
-    display: block;
   }
 }
