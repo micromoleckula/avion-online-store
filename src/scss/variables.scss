@@ -5,12 +5,16 @@ $border-gray:  #EBE8F4;
 $white: #FFFFFF;
 $line-header: #2b2b2b;
 $border-dark: #CAC6DA;
-$link-color: #726E8D;
+$link-color: #646464;
 
 %fontfw-and-lineh {
   font-weight: 400;
   line-height: 150%;
-  font-family: 'Clash Display';
+}
+
+@mixin line {
+  display: block;
+  height: 1px;
 }
 
 %font-style-36 {

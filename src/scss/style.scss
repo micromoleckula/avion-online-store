@@ -2,3 +2,8 @@
 @use 'normalize.css';
 @use 'fonts';
 @use '../components/header/header.scss';
+@use '../components/footer/footer.scss';
+
+body {
+  font-family: 'Clash Display';
+}

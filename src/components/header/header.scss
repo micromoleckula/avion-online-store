@@ -123,9 +123,8 @@
   }
 
   .header__line {
-    display: block;
-    height: 1px;
-    color: $line-header;
+    @include line;
+    background-color: $line-header;
   }
 
   .header__user {

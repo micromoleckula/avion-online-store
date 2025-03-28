@@ -1,0 +1,65 @@
+@use '/src/scss/variables' as *;
+
+footer {
+  background-color: $dark-primary;
+  color: $white;
+  padding: 60px 80px 20px 80px;
+}
+
+.footer__list__box {
+  display: flex;
+}
+
+.footer__top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.footer__bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__line {
+  background-color: $border-gray;
+  @include line;
+}
+
+.footer__email-paragraph {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.footer__input-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: #4a4368;
+  overflow: hidden;
+  width: 400px;
+}
+
+.footer__input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: transparent;
+  color: white;
+  outline: none;
+  font-size: 16px;
+}::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer__input-button {
+  background: white;
+  color: #2d2548;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.footer__input-button:hover {
+  background: #ddd;
+}
