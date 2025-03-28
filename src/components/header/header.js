@@ -1,14 +1,16 @@
+const headerPath = new URL('../header/header.html', import.meta.url).href;
+
 export async function loadHeader() {
-  const headerElement = document.getElementById("header");
-  if (headerElement) {
-      try {
-          const response = await fetch("/header.html");
-          if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-          headerElement.innerHTML = await response.text();
-      } catch (error) {
-          console.error("Помилка завантаження header:", error);
-      }
-  }
+    const headerElement = document.getElementById("header");
+    if (headerElement) {
+        try {
+            const response = await fetch(headerPath);
+            if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+            headerElement.innerHTML = await response.text();
+        } catch (error) {
+            console.error("Помилка завантаження header:", error);
+        }
+    }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
