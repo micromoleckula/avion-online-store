@@ -1,11 +1,10 @@
 import '../scss/style.scss';
 import { writePost, readPosts } from '../../data/firebase.js'; 
-import { headerComponent } from '../components/header/header.js';
-import { footerComponent } from '../components/footer/footer.js';
+import { loadHeader } from "../components/header/header.js";
+import { loadFooter } from "../components/footer/footer.js";
 
-let app = document.getElementById('app');
+document.addEventListener("DOMContentLoaded", () => {
+    loadHeader();
+    loadFooter();
+});
 
-app.innerHTML = `
-${headerComponent}
-${footerComponent}
-`;
