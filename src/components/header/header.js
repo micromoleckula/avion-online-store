@@ -2,7 +2,7 @@ export async function loadHeader() {
   const headerElement = document.getElementById("header");
   if (headerElement) {
       try {
-          const response = await fetch("/src/components/header/header.html");
+          const response = await fetch("/header.html");
           if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
           headerElement.innerHTML = await response.text();
       } catch (error) {
