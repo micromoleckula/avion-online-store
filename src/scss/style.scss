@@ -3,7 +3,9 @@
 @use 'fonts';
 @use '../components/header/header.scss';
 @use '../components/footer/footer.scss';
+@use 'hero.scss';
 
 body {
   font-family: 'Clash Display';
+  padding: 0;
 }

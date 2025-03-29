@@ -1,0 +1,17 @@
+@use 'variables' as *;
+
+.hero__block {
+  @extend %container;
+}
+
+.hero__wrapper {
+  display: flex;
+}
+
+.hero__button {
+  @extend %small-button;
+}
+
+.hero__wrapper {
+  background-color: $dark-primary;
+}

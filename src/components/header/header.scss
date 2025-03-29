@@ -4,6 +4,11 @@
   @extend %font-style-24;
 }
 
+.header__container {
+  @extend %container;
+  max-width: 1700px;
+}
+
 .header__hero {
   margin: 0 30px;
 }
@@ -19,6 +24,7 @@
   padding: 0;
   margin: 10px 0;
   display: block;
+  font-family: "Satoshi";
 }
 
 .header__list__item {

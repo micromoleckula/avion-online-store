@@ -1,29 +1,42 @@
-@use '/src/scss/variables' as *;
+@use "/src/scss/variables" as *;
 
 footer {
   background-color: $dark-primary;
   color: $white;
-  padding: 60px 80px 20px 80px;
+  padding-top: 40px;
 }
 
-.footer__list__box {
-  display: flex;
-}
-
-.footer__top {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 50px;
+.footer__container {
+  @extend %container;
 }
 
 .footer__bottom {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .footer__line {
-  background-color: $border-gray;
+  background-color: $primary;
   @include line;
+}
+
+.footer__list {
+  list-style: none;
+  padding-inline-start: 0;
+  text-align: center;
+}
+
+.footer__list-title {
+  @extend %font-style-16;
+  margin: 0;
+}
+
+.footer__list-item {
+  @extend %font-style-14;
+  font-family: "Satoshi";
+  cursor: pointer;
 }
 
 .footer__email-paragraph {
@@ -32,34 +45,69 @@ footer {
 }
 
 .footer__input-wrapper {
-  display: flex;
-  align-items: center;
-  background-color: #4a4368;
-  overflow: hidden;
-  width: 400px;
+  @extend %input-wrapper;
+  margin-bottom: 30px;
 }
 
 .footer__input {
-  flex: 1;
-  padding: 10px;
-  border: none;
-  background: transparent;
-  color: white;
-  outline: none;
-  font-size: 16px;
-}::placeholder {
-  color: rgba(255, 255, 255, 0.7);
+  @extend %input;
+  width: 100%;
 }
 
 .footer__input-button {
-  background: white;
-  color: #2d2548;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-size: 16px;
+  background: $white;
+  color: $dark-primary;
+  @extend %small-button;
 }
 
 .footer__input-button:hover {
-  background: #ddd;
+  background: $lightGray;
+}
+
+.footer__bottom__social {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.footer__bottom__social img {
+  cursor: pointer;
+}
+
+.footer__bottom__text {
+  font-family: "Satoshi";
+}
+
+.footer__list__box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media screen and (min-width: 1100px) {
+  .footer__top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+  }
+
+  .footer__bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+  
+  .footer__list__box {
+    flex-direction: row;
+    gap: 100px;
+    justify-content: space-between;
+  }
+  
+  .footer__input {
+    width: 400px;
+  }
+
+  .footer__list {
+    text-align: start;
+  }
 }

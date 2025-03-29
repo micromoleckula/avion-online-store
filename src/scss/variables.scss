@@ -1,5 +1,6 @@
 $dark-primary: #2A254B;
 $primary: #4E4D93;
+$white-opacity15: #ffffff15;
 $lightGray:  #F9F9F9;
 $border-gray:  #EBE8F4;
 $white: #FFFFFF;
@@ -42,8 +43,38 @@ $link-color: #646464;
   @extend %fontfw-and-lineh;
 }
 
-%font-style-h6 {
+%font-style-14 {
   font-size: 14pt;
   @extend %fontfw-and-lineh;
 }
 
+%input-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+%small-button {
+  border: none;
+  padding: 16px 32px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "Satoshi";
+}
+
+%input {
+  flex: 1;
+  padding: 16px 32px;
+  border: none;
+  background: $white-opacity15;
+  color: $white;
+  outline: none;
+  font-family: "Satoshi";
+}::placeholder {
+  color: $white;
+}
+
+%container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
