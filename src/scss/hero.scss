@@ -2,16 +2,78 @@
 
 .hero__block {
   @extend %container;
+  color: $white;
 }
 
 .hero__wrapper {
   display: flex;
+  justify-content: center;
+  background-color: $dark-primary;
+}
+
+.hero__title {
+  @extend %font-style-32;
+  text-align: center;
 }
 
 .hero__button {
   @extend %small-button;
+  background-color: $white-opacity15;
+  color: $white;
 }
 
-.hero__wrapper {
-  background-color: $dark-primary;
+.hero__button__mobile {
+  @extend %big-button;
+  background-color: $white-opacity15;
+  color: $white;
+}
+
+.hero__wrapper__collection {
+  display: flex;
+  flex-direction: column;
+  padding: 60px;
+}
+
+.hero__wrapper__paragraph {
+  @extend %font-style-18-satoshi;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.hero__img,
+.hero__button {
+  display: none;
+}
+
+@media screen and (min-width: 1000px) {
+  .hero__img, 
+  .hero__button {
+    display: block;
+  }
+
+  .hero__wrapper__collection,
+  .hero__wrapper {
+    justify-content: space-between;
+  }
+  
+  .hero__title,
+  .hero__wrapper__paragraph {
+    text-align: start;
+  }
+
+  .hero__wrapper {
+    margin: 100px 0;
+  }
+  
+  .hero__wrapper__paragraph {
+    max-width: 600px;
+  }
+  
+  .hero__wrapper__top {
+    max-width: 500px;
+  }
+
+  .hero__button__mobile {
+    display: none;
+  }
 }
