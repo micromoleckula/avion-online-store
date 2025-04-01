@@ -1,23 +1,15 @@
-const headerPath = new URL('header.html', import.meta.url).href;
+const headerPath = new URL("header.html", import.meta.url).href;
 
 export async function loadHeader() {
-    const headerElement = document.getElementById("header");
-    if (headerElement) {
-        try {
-            const response = await fetch(headerPath);
-            if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-            headerElement.innerHTML = await response.text();
-        } catch (error) {
-            console.error("Помилка завантаження header:", error);
-        }
-    }
-}
+  const headerElement = document.getElementById("header");
+  if (headerElement) {
+    const response = await fetch(headerPath);
+    if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+    headerElement.innerHTML = await response.text();
 
-document.addEventListener("DOMContentLoaded", function () {
-  const burger = document.querySelector(".header__burger");
-  const mobileMenu = document.querySelector(".header__mobile-menu");
+    const burger = document.querySelector(".header__burger");
+    const mobileMenu = document.querySelector(".header__mobile-menu");
 
-  if (burger && mobileMenu) {
     burger.addEventListener("click", function () {
       mobileMenu.classList.toggle("active");
       burger.classList.toggle("active");
@@ -33,4 +25,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  loadHeader();
 });

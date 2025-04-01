@@ -8,9 +8,9 @@ import { loadDesignCommunity } from "../components/design-community/design-commu
 
 document.addEventListener("DOMContentLoaded", () => {
     loadHeader();
-    loadFooter();
     loadFeatures();
     loadSignUp();
     loadDesignCommunity();
+    loadFooter();
 });
 

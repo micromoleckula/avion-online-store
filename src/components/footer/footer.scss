@@ -27,14 +27,14 @@ footer {
 }
 
 .footer__list-title {
-  @extend %font-style-16;
-  margin: 0;
+  @extend %font-style-20;
+  margin-bottom: 10px;
 }
 
 .footer__list-item {
-  @extend %font-style-14;
-  font-family: "Satoshi";
+  @extend %font-style-16-satoshi;
   cursor: pointer;
+  margin-bottom: 5px;
 }
 
 .footer__email-paragraph {

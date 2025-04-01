@@ -5,8 +5,13 @@
 @use '../components/footer/footer.scss';
 @use '../components/features/features.scss';
 @use '../components/sign-up/sign-up.scss';
+@use '../components/design-community/design-community.scss';
 @use 'hero.scss';
 
 body {
   font-family: 'Clash Display';
 }
+
+/* * {
+  outline: 1px solid red;
+} */

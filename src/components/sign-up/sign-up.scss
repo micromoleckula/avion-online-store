@@ -7,8 +7,12 @@
 }
 
 .sign-up__container {
+  @extend %flex-column-center;
   background-color: $white;
-  padding: 50px 500px;
+  width: 100%;
+  max-width: 1270px;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .sign-up__title{
@@ -20,12 +24,13 @@
   @extend %font-style-16-satoshi;
   margin: 0 auto;
   text-align: center;
-  width: 470px;
 }
 
 .sign-up__input-wrapper {
   @extend %input-wrapper;
   margin-top: 70px;
+  margin-bottom: 20px;
+  width: 400px
 }
 
 .sign-up__input {

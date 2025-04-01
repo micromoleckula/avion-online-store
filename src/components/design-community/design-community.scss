@@ -1,2 +1,56 @@
 @use "/src/scss/variables" as *;
 
+.design-community__hero {
+  @extend %container;
+  @extend %flex-column-center;
+  max-width: 1240px;
+  padding: 0;
+}
+
+.design-community__text__box {
+  padding: 50px 25px;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.design-community__title {
+  @extend %font-style-24;
+}
+
+.design-community__paragraph {
+  @extend %font-style-16-satoshi;
+  margin-bottom: 15px;
+}
+
+.design-community__paragraph-seconde {
+  @extend %font-style-16-satoshi;
+}
+
+.design-community__button {
+  @extend %small-button;
+}
+
+.design-community__img {
+  width: 100%;
+  max-width: 600px;
+}
+
+@media screen and (min-width: 900px) {
+  .design-community__text__box {
+    padding: 70px 20px 50px 30px;
+    width: 500px;
+    display: block;
+    text-align: start;
+  }
+
+  .design-community__img {
+    max-width: 600px;
+  }
+
+  .design-community__hero {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

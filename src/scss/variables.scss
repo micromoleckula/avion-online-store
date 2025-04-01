@@ -74,11 +74,8 @@ $link-color: #646464;
 }
 
 %big-button {
-  border: none;
+  @extend %small-button;
   padding: 16px 0;
-  cursor: pointer;
-  font-size: 16px;
-  font-family: "Satoshi";
 }
 
 %input {

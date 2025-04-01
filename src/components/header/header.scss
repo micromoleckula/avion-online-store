@@ -87,10 +87,10 @@
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease-in-out;
-}
 
-.header__mobile-menu.active {
-  max-height: 400px;
+  &.active {
+    max-height: 400px;
+  }
 }
 
 .header__left--mobile {
