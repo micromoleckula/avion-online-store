@@ -4,7 +4,6 @@ export async function loadHeader() {
   const headerElement = document.getElementById("header");
   if (headerElement) {
     const response = await fetch(headerPath);
-    if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
     headerElement.innerHTML = await response.text();
 
     const burger = document.querySelector(".header__burger");
