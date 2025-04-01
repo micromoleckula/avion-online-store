@@ -1,4 +1,4 @@
-const footerPath = new URL('../footer/footer.html', import.meta.url).href;
+const footerPath = new URL('footer.html', import.meta.url).href;
 
 export async function loadFooter() {
     const footerElement = document.getElementById("footer");

@@ -1,4 +1,4 @@
-const headerPath = new URL('../header/header.html', import.meta.url).href;
+const headerPath = new URL('header.html', import.meta.url).href;
 
 export async function loadHeader() {
     const headerElement = document.getElementById("header");

@@ -1,0 +1,43 @@
+@use "/src/scss/variables" as *;
+
+.sign-up__hero {
+  @extend %flex-column-center;
+  background-color: $light-gray;
+  padding: 60px 0;
+}
+
+.sign-up__container {
+  background-color: $white;
+  padding: 50px 500px;
+}
+
+.sign-up__title{
+  @extend %font-style-36;
+  text-align: center;
+}
+
+.sign-up__paragraph {
+  @extend %font-style-16-satoshi;
+  margin: 0 auto;
+  text-align: center;
+  width: 470px;
+}
+
+.sign-up__input-wrapper {
+  @extend %input-wrapper;
+  margin-top: 70px;
+}
+
+.sign-up__input {
+ @extend %input;
+ color: $dark-primary;
+ background-color: $light-gray;
+}::placeholder {
+  color: $dark-primary;
+}
+
+.sign-up__input-button {
+  @extend %small-button;
+  color: $white;
+  background-color: $dark-primary;
+}

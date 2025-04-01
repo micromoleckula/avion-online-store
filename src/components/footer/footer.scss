@@ -11,9 +11,7 @@ footer {
 }
 
 .footer__bottom {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @extend %flex-column-center;
   text-align: center;
 }
 
@@ -66,8 +64,8 @@ footer {
 
 .footer__bottom__social {
   display: flex;
-  gap: 15px;
   justify-content: center;
+  gap: 15px;
 }
 
 .footer__bottom__social img {
