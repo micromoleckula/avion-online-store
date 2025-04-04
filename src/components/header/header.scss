@@ -2,6 +2,9 @@
 
 .header__logo {
   @extend %font-style-24;
+  a {
+    color: #22202E;
+  }
 }
 
 .header__container {

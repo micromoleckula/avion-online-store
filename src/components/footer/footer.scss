@@ -35,6 +35,9 @@ footer {
   @extend %font-style-16-satoshi;
   cursor: pointer;
   margin-bottom: 5px;
+  a {
+    color: $white;
+  }
 }
 
 .footer__email-paragraph {
