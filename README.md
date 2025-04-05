@@ -1,7 +1,7 @@
 # Avion - Personal Final Project on JS/TS SoftServe course
 
 There are 5 pages on the site
-1. indexhttps://avion-prokop-dmytro.netlify.app/
+1. index
 2. add new products
 3. all products
 4. shopping basket
