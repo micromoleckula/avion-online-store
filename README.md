@@ -25,11 +25,18 @@ You can see the design of the project by following this link: [Figma](https://ww
 
 What I use to create the project
 
-• HTML## 
-• SCSS## 
-• JS## 
-• Vite## 
-• AJAX## 
-• Firebase## 
-• Netlify## 
-• Local Storage## 
+• HTML 
+
+• SCSS
+
+• JS
+
+• Vite
+
+• AJAX
+
+• Firebase
+
+• Netlify 
+
+• Local Storage
