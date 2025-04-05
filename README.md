@@ -1,7 +1,7 @@
 # Avion - Personal Final Project on JS/TS SoftServe course
 
 There are 5 pages on the site
-1. index
+1. indexhttps://avion-prokop-dmytro.netlify.app/
 2. add new products
 3. all products
 4. shopping basket
@@ -25,11 +25,11 @@ You can see the design of the project by following this link: [Figma](https://ww
 
 What I use to create the project
 
-• HTML
-• SCSS
-• JS
-• Vite
-• AJAX
-• Firebase
-• Netlify
-• Local Storage
+• HTML## 
+• SCSS## 
+• JS## 
+• Vite## 
+• AJAX## 
+• Firebase## 
+• Netlify## 
+• Local Storage## 
