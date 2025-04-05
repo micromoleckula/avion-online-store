@@ -5,10 +5,10 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        index: path.resolve(__dirname, 'src/pages/index.html'),
-        addProduct: path.resolve(__dirname, 'src/pages/add-products.html'),
-        allProducts: path.resolve(__dirname, 'src/pages/all-products.html'),
-        basket: path.resolve(__dirname, 'src/pages/basket.html'),
+        index: path.resolve(__dirname, 'index.html'),
+        addProduct: path.resolve(__dirname, 'src/pages/add-products/add-products.html'),
+        allProducts: path.resolve(__dirname, 'src/pages/all-products/all-products.html'),
+        basket: path.resolve(__dirname, 'src/pages/basket/basket.html'),
       },
     },
   },
