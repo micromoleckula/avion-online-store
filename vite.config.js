@@ -6,9 +6,9 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, 'index.html'),
-        addProduct: path.resolve(__dirname, '/add-products.html'),
-        allProducts: path.resolve(__dirname, '/all-products.html'),
-        basket: path.resolve(__dirname, '/basket.html'),
+        addProduct: path.resolve(__dirname, 'add-products.html'),
+        allProducts: path.resolve(__dirname, 'all-products.html'),
+        basket: path.resolve(__dirname, 'basket.html'),
       },
     },
   },
