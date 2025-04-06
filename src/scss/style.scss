@@ -7,6 +7,10 @@
 @use '../components/sign-up/sign-up.scss';
 @use '../components/design-community/design-community.scss';
 @use 'hero.scss';
+@use '../pages/add-products/add-products.scss';
+@use '../pages/all-products/all-products.scss';
+@use '../pages/basket/basket.scss';
+@use '../pages/detail-page/detail-page.scss';
 
 body {
   font-family: 'Clash Display';
