@@ -27,7 +27,7 @@ function renderProducts(products) {
     card.innerHTML = `
       <img class="catalog__card-image" src="${product.imageUrl}" alt="${product.title}">
       <h3 class="catalog__card-title">${product.title}</h3>
-      <p class="catalog__card-price">${product.price} ₽</p>
+      <p class="catalog__card-price">${product.price} $</p>
       <p class="catalog__card-description">${product.description}</p>
     `;
 
