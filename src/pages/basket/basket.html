@@ -9,9 +9,37 @@
   <body>
     <header id="header" class="header__hero"></header>
     <main>
+      <section class="basket__section">
+        <div class="container">
+          <h1 class="basket__title">Корзина</h1>
+          <div id="basket-list" class="basket__list"></div>
+          <p id="basket-empty" class="basket__empty" style="display: none;">Корзина пуста.</p>
+          <div class="basket__footer">
+            <p class="basket__total">Итого: <span id="total-price">0 $</span></p>
+            <button id="checkout-btn" class="basket__checkout">Оформить заказ</button>
+          </div>
+        </div>
+      </section>
       
-
+      <!-- Модальное окно -->
+      <div id="order-modal" class="modal" style="display: none;">
+        <div class="modal__content">
+          <h2 class="modal__title">Оформление заказа</h2>
+          <form id="order-form" class="modal__form">
+            <label for="order-name" class="modal__label">Имя:</label>
+            <input type="text" id="order-name" class="modal__input" required>
       
+            <label for="order-address" class="modal__label">Адрес доставки:</label>
+            <input type="text" id="order-address" class="modal__input" required>
+      
+            <button type="submit" class="modal__submit">Оформить заказ</button>
+          </form>
+          <div id="order-success" class="modal__success" style="display: none;">
+            <p>Спасибо за покупку!</p>
+            <button id="close-modal" class="modal__close">OK</button>
+          </div>
+        </div>
+      </div>
     </main>
     <footer id="footer" class="footer__hero"></footer>
     <script type="module" src="/src/js/main.js"></script>

@@ -1,6 +1,10 @@
 import { db, storage } from "../../../data/firebase.js";
 import { ref as dbRef, set } from "firebase/database";
-import { ref as storageRef, uploadBytes, getDownloadURL } from "firebase/storage";
+import {
+  ref as storageRef,
+  uploadBytes,
+  getDownloadURL,
+} from "firebase/storage";
 
 const form = document.getElementById("productForm");
 const status = document.getElementById("status");
