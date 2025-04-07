@@ -35,7 +35,7 @@ What I use to create the project
 
 • AJAX
 
-• Firebase
+• Firebase (Realtime Database and Storage)
 
 • Netlify 
 

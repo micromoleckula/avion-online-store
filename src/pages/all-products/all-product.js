@@ -1,26 +1,35 @@
 import { db } from "../../../data/firebase.js";
 import { ref as dbRef, get } from "firebase/database";
 
-// Находим элемент для отображения карточек
 const productList = document.getElementById("productList");
+const loadMoreBtn = document.getElementById("loadMoreBtn");
 
-// Функция для получения данных о товарах
+let allProducts = [];
+let currentIndex = 0;
+const PRODUCTS_PER_PAGE = 9;
+
+// Загружаем товары с Firebase
 async function fetchProducts() {
-  const productsSnapshot = await get(dbRef(db, "/products"));
-  if (productsSnapshot.exists()) {
-    const products = productsSnapshot.val();
-    renderProducts(products);
-  } else {
-    productList.innerHTML = "<p>Товары не найдены.</p>";
+  try {
+    const productsSnapshot = await get(dbRef(db, "/products"));
+    if (productsSnapshot.exists()) {
+      const products = productsSnapshot.val();
+      allProducts = Object.entries(products).map(([id, data]) => ({ id, ...data }));
+      renderNextProducts(); // Загружаем первую партию
+    } else {
+      productList.innerHTML = "<p>Товары не найдены.</p>";
+    }
+  } catch (error) {
+    console.error("Ошибка загрузки товаров:", error);
   }
 }
 
-// Функция для отображения товаров
-function renderProducts(products) {
-  const productArray = Object.entries(products).map(([id, data]) => ({ id, ...data }));
-  productList.innerHTML = ""; // Очищаем контейнер
+// Отображаем следующую партию товаров
+function renderNextProducts() {
+  const nextProducts = allProducts.slice(currentIndex, currentIndex + PRODUCTS_PER_PAGE);
+  currentIndex += PRODUCTS_PER_PAGE;
 
-  productArray.forEach((product) => {
+  nextProducts.forEach((product) => {
     const card = document.createElement("div");
     card.classList.add("catalog__card");
 
@@ -33,7 +42,15 @@ function renderProducts(products) {
 
     productList.appendChild(card);
   });
+
+  // Если товаров больше нет — прячем кнопку
+  if (currentIndex >= allProducts.length) {
+    loadMoreBtn.style.display = "none";
+  }
 }
 
-// Запускаем загрузку товаров
+// Слушатель на кнопку "Load more"
+loadMoreBtn.addEventListener("click", renderNextProducts);
+
+// Первая загрузка
 fetchProducts();

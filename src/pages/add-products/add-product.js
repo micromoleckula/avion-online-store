@@ -2,7 +2,6 @@ import { db, storage } from "../../../data/firebase.js";
 import { ref as dbRef, set } from "firebase/database";
 import { ref as storageRef, uploadBytes, getDownloadURL } from "firebase/storage";
 
-// Находим элементы формы
 const form = document.getElementById("productForm");
 const status = document.getElementById("status");
 
@@ -23,11 +22,11 @@ form.addEventListener("submit", async (e) => {
   const imageFile = form.image.files[0];
 
   if (!imageFile || !title || !price || !description) {
-    status.textContent = "Пожалуйста, заполните все поля.";
+    status.textContent = "Please fill in all fields.";
     return;
   }
 
-  status.textContent = "Загрузка...";
+  status.textContent = "Loading...";
 
   try {
     const imageUrl = await uploadImage(imageFile);
@@ -39,10 +38,10 @@ form.addEventListener("submit", async (e) => {
       imageUrl,
     });
 
-    status.textContent = "Товар успешно добавлен!";
+    status.textContent = "Product successfully added!";
     form.reset();
   } catch (error) {
-    console.error("Ошибка загрузки:", error);
-    status.textContent = "Произошла ошибка при загрузке.";
+    console.error("Download Error:", error);
+    status.textContent = "There was a download error.";
   }
 });

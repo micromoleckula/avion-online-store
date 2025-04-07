@@ -1,6 +1,6 @@
 @use "/src/scss/variables" as *;
 
-.catalog {
+.popular-products {
   padding: 2rem 1rem;
 
   &__title {
@@ -15,13 +15,9 @@
     gap: 1rem;
     justify-content: center;
   }
-  
-  &__load-more {
-    margin: 2rem auto 0;
-    display: none;
-    padding: 0.75rem 2rem;
-    font-size: 1rem;
-    cursor: pointer;
+
+  &-products__link {
+  @extend %small-button;
   }
 
   &__card {
@@ -64,5 +60,3 @@
     }
   }
 }
-
-
