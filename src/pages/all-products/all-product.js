@@ -78,7 +78,7 @@ export async function loadAllProducts() {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     cart.push(product);
     localStorage.setItem("cart", JSON.stringify(cart));
-    alert(`${product.title} добавлен в корзину`);
+    alert(`${product.title} added to basket`);
   }
 
   loadMoreBtn.addEventListener("click", renderNextProducts);

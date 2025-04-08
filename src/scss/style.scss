@@ -17,6 +17,13 @@ body {
   font-family: 'Clash Display';
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
 a {
   text-decoration: none;
 }
