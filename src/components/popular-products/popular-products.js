@@ -1,4 +1,4 @@
-import { db } from "../../../data/firebase.js";
+import { db } from "/data/firebase.js";
 import { ref as dbRef, get } from "firebase/database";
 
 export async function loadPopularProducts() {
@@ -27,8 +27,8 @@ async function fetchAndRenderProducts(container) {
 
       const productArray = Object.entries(products)
         .map(([id, data]) => ({ id, ...data }))
-        .reverse() // Последние первыми
-        .slice(0, 4); // Только 4 штуки
+        .reverse()
+        .slice(0, 4);
 
       container.innerHTML = "";
 
@@ -37,14 +37,13 @@ async function fetchAndRenderProducts(container) {
         container.appendChild(card);
       });
     } else {
-      container.innerHTML = "<p>Товары не найдены.</p>";
+      container.innerHTML = "<p>Goods not found.</p>";
     }
   } catch (error) {
-    console.error("Помилка отримання даних продуктів:", error);
+    console.error("Error receiving product data:", error);
   }
 }
 
-// Создание карточки товара
 function createProductCard(product) {
   const card = document.createElement("div");
   card.classList.add("popular-products__card");
@@ -60,12 +59,11 @@ function createProductCard(product) {
     <p class="popular-products__card-price">${product.price} $</p>
     <p class="popular-products__card-description">${product.description}</p>
     <div class="popular-products__card-buttons">
-      <button class="popular-products__btn-more" data-id="${product.id}">Больше про товар</button>
-      <button class="popular-products__btn-add" data-id="${product.id}">Добавить в корзину</button>
+      <button class="popular-products__btn-more" data-id="${product.id}">More</button>
+      <button class="popular-products__btn-add" data-id="${product.id}">Add to cart</button>
     </div>
   `;
 
-  // Клик по изображению или кнопке "Больше про товар"
   const image = card.querySelector(".popular-products__card-image");
   const moreBtn = card.querySelector(".popular-products__btn-more");
 
@@ -75,19 +73,17 @@ function createProductCard(product) {
     });
   });
 
-  // Кнопка "Добавить в корзину"
   const addBtn = card.querySelector(".popular-products__btn-add");
   addBtn.addEventListener("click", () => {
-    addToCart(product); // Вызываем функцию добавления в корзину
+    addToCart(product);
   });
 
   return card;
 }
 
-// Функция добавления товара в корзину
 function addToCart(product) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  cart.push(product); // Добавляем товар в массив
-  localStorage.setItem("cart", JSON.stringify(cart)); // Сохраняем обновленный массив в localStorage
-  alert(`${product.title} добавлен в корзину`);
+  cart.push(product);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert(`${product.title} added to basket`);
 }

@@ -1,13 +1,14 @@
 @use "/src/scss/variables" as *;
 
-/* Корзина */
 .basket__section {
-  padding: 2rem 0;
+  @extend %container;
+  @extend %flex-column-center;
+  margin: 50px auto;
 }
 
 .basket__title {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  @extend %font-style-32;
+  text-align: center;
 }
 
 .basket__list {
@@ -24,16 +25,16 @@
 
 .basket__item-image {
   width: 100%;
-  height: auto;
-  border-radius: 8px;
 }
 
 .basket__item-title {
-  font-size: 1.25rem;
+  @extend %font-style-18-satoshi;
   margin: 0.5rem 0;
+  font-weight: bold;
 }
 
 .basket__item-price {
+  @extend %font-style-16-satoshi;
   font-weight: bold;
   color: #333;
 }
@@ -41,27 +42,21 @@
 .basket__item-remove {
   background-color: #e74c3c;
   color: white;
-  border: none;
   padding: 0.5rem 1rem;
-  cursor: pointer;
-  border-radius: 4px;
+  @extend %small-button;
 }
 
 .basket__footer {
   margin-top: 2rem;
-  text-align: right;
+  text-align: center;
 }
 
 .basket__checkout {
-  background-color: #2ecc71;
+  @extend %small-button;
   color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  cursor: pointer;
-  border-radius: 4px;
+  background-color: $dark-primary;
 }
 
-/* Модальное окно */
 .modal {
   position: fixed;
   top: 0;
@@ -69,7 +64,7 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  display: none; /* Изначально скрыто */
+  display: none;
   justify-content: center;
   align-items: center;
   z-index: 1000;

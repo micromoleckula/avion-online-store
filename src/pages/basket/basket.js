@@ -8,7 +8,6 @@ export function loadCart() {
   const orderSuccess = document.getElementById("order-success");
   const closeModalBtn = document.getElementById("close-modal");
 
-  // Загрузка корзины
   function renderCart() {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     if (cart.length === 0) {
@@ -34,7 +33,7 @@ export function loadCart() {
           <h3 class="basket__item-title">${product.title}</h3>
           <p class="basket__item-price">${product.price} $</p>
         </div>
-        <button class="basket__item-remove" data-index="${index}">Удалить</button>
+        <button class="basket__item-remove" data-index="${index}">Delete</button>
       `;
 
       basketList.appendChild(item);
@@ -42,7 +41,6 @@ export function loadCart() {
 
     totalPriceEl.textContent = `${totalPrice.toFixed(2)} $`;
 
-    // Удаление товара из корзины
     document.querySelectorAll(".basket__item-remove").forEach(button => {
       button.addEventListener("click", (e) => {
         const index = e.target.dataset.index;
@@ -58,12 +56,10 @@ export function loadCart() {
     renderCart();
   }
 
-  // Открытие модального окна
   checkoutBtn.addEventListener("click", () => {
     modal.style.display = "flex";
   });
 
-  // Обработка формы
   orderForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -71,19 +67,16 @@ export function loadCart() {
     const address = document.getElementById("order-address").value.trim();
 
     if (name && address) {
-      // Очищаем корзину
       localStorage.removeItem("cart");
       renderCart();
 
-      // Показываем сообщение об успехе
       orderForm.style.display = "none";
       orderSuccess.style.display = "flex";
     } else {
-      alert("Пожалуйста, заполните все поля.");
+      alert("Please fill in all fields.");
     }
   });
 
-  // Закрытие модального окна
   closeModalBtn.addEventListener("click", () => {
     modal.style.display = "none";
     orderForm.style.display = "block";
@@ -91,7 +84,6 @@ export function loadCart() {
     orderForm.reset();
   });
 
-  // Закрытие модального окна при клике вне его
   modal.addEventListener("click", (e) => {
     if (e.target === modal) {
       modal.style.display = "none";
@@ -101,6 +93,5 @@ export function loadCart() {
     }
   });
 
-  // Инициализация загрузки корзины
   renderCart();
 }

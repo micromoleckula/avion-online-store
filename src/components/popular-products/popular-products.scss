@@ -1,11 +1,15 @@
 @use "/src/scss/variables" as *;
 
 .popular-products {
-  padding: 2rem 1rem;
+
+  & {
+    @extend %container;
+    @extend %flex-column-center;
+    padding-bottom: 60px;
+  }
 
   &__title {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    @extend %font-style-24;
     text-align: center;
   }
 
@@ -16,22 +20,35 @@
     justify-content: center;
   }
 
-  &-products__link {
-  @extend %small-button;
+  &__link {
+    @extend %small-button;
+    background-color: $primary;
+    color: $white;
+  }
+  
+  &__btn-more {
+    @extend %small-button;
+    padding: 10px 32px;
+    background-color: $primary;
+    color: $white;
+  }
+  
+  &__btn-add {
+    @extend %small-button;
+    background-color: $dark-primary;
+    padding: 10px 32px;
+    color: $white;
   }
 
   &__card {
-    background-color: #fff;
+    background-color: $white;
     border: 1px solid #ccc;
     border-radius: 8px;
     width: calc(33% - 1rem);
     padding: 1rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: max-content;
-
-    @media (max-width: 768px) {
-      width: calc(50% - 1rem);
-    }
+    margin-bottom: 60px;
 
     @media (max-width: 480px) {
       width: 100%;
@@ -40,23 +57,38 @@
     &-image {
       height: 200px;
       object-fit: cover;
-      border-radius: 8px;
     }
 
     &-title {
-      font-size: 1.2rem;
-      margin: 0.5rem 0;
+      @extend %font-style-20;
+      margin: 10px 0;
     }
 
     &-price {
-      font-size: 1rem;
+      @extend %font-style-16-satoshi;
       color: #333;
       margin-bottom: 0.5rem;
     }
 
     &-description {
-      font-size: 0.9rem;
+      @extend %font-style-16-satoshi;
       color: #666;
+    }
+    
+    &-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 5px
     }
   }
 }
+
+
+
+  
+
+  
+
+  
+
+  

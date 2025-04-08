@@ -1,22 +1,16 @@
-import { db, storage } from "../../../data/firebase.js";
+import { db, storage } from "/data/firebase.js";
 import { ref as dbRef, set } from "firebase/database";
-import {
-  ref as storageRef,
-  uploadBytes,
-  getDownloadURL,
-} from "firebase/storage";
+import { ref as storageRef, uploadBytes, getDownloadURL} from "firebase/storage";
 
 const form = document.getElementById("productForm");
 const status = document.getElementById("status");
 
-// Функция загрузки изображения в Firebase Storage
 async function uploadImage(file) {
   const fileRef = storageRef(storage, `products/${Date.now()}-${file.name}`);
   await uploadBytes(fileRef, file);
-  return getDownloadURL(fileRef); // Возвращаем ссылку на картинку
+  return getDownloadURL(fileRef);
 }
 
-// Обработчик отправки формы
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 

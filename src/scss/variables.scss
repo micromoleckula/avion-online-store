@@ -66,11 +66,15 @@ $link-color: #646464;
 }
 
 %small-button {
+  @extend %font-style-16;
   border: none;
   padding: 16px 32px;
   cursor: pointer;
-  font-size: 16px;
-  font-family: "Satoshi";
+  transition: filter 0.2s ease;
+
+  &:hover {
+    filter: brightness(0.9);
+  }
 }
 
 %big-button {

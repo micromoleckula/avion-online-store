@@ -1,4 +1,4 @@
-import { db } from "../../../data/firebase.js";
+import { db } from "/data/firebase.js";
 import { ref as dbRef, get } from "firebase/database";
 
 export async function loadAllProducts() {
@@ -16,10 +16,10 @@ export async function loadAllProducts() {
         allProducts = Object.entries(products).map(([id, data]) => ({ id, ...data }));
         renderNextProducts();
       } else {
-        productList.innerHTML = "<p>Товары не найдены.</p>";
+        productList.innerHTML = "<p>Goods not found.</p>";
       }
     } catch (error) {
-      console.error("Ошибка загрузки товаров:", error);
+      console.error("Error loading products:", error);
     }
   }
 
@@ -52,8 +52,8 @@ export async function loadAllProducts() {
       <p class="catalog__card-price">${product.price} $</p>
       <p class="catalog__card-description">${product.description}</p>
       <div class="catalog__card-buttons">
-        <button class="catalog__btn-more" data-id="${product.id}">Больше про товар</button>
-        <button class="catalog__btn-add" data-id="${product.id}">Добавить в корзину</button>
+        <button class="catalog__btn-more" data-id="${product.id}">More</button>
+        <button class="catalog__btn-add" data-id="${product.id}">Add to cart</button>
       </div>
     `;
 

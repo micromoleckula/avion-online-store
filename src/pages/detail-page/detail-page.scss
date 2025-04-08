@@ -1,1 +1,39 @@
 @use "/src/scss/variables" as *;
+.detail {
+  & {
+    @extend %container;
+    @extend %flex-column-center
+  }
+
+  &__image {
+    height: 400px;
+  }
+
+  &__title {
+    @extend %font-style-32;
+  }
+
+  &__price {
+    @extend %font-style-20;
+  }
+
+  &__description {
+    @extend %font-style-20;
+  }
+
+  &__card {
+    display: flex;
+    gap: 30px;
+    margin: 50px 0;
+  }
+
+  &__info {
+    margin-top: 100px;
+  }
+
+  &__add-to-cart {
+    @extend %small-button;
+    background-color: $dark-primary;
+    color: $white;
+  }
+}

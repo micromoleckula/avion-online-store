@@ -11,10 +11,10 @@ export async function loadProductDetails() {
         displayProductDetails(product);
         document.getElementById("title__page").textContent = `${product.title} | Avion`;
       } else {
-        document.getElementById("product-details").innerHTML = "<p>Товар не найден.</p>";
+        document.getElementById("product-details").innerHTML = "<p>Item not found.</p>";
       }
     } catch (error) {
-      console.error("Ошибка загрузки данных товара:", error);
+      console.error("Error loading product data:", error);
     }
   }
 }
@@ -24,23 +24,23 @@ function displayProductDetails(product) {
   container.innerHTML = `
     <div class="detail__card">
       <img class="detail__image" src="${product.imageUrl}" alt="${product.title}">
-      <h1 class="detail__title">${product.title}</h1>
-      <p class="detail__price">${product.price} $</p>
-      <p class="detail__description">${product.description}</p>
-      <button id="add-to-cart-btn" class="detail__add-to-cart">Добавить в корзину</button>
+      <div class="detail__info"
+        <h1 class="detail__title">${product.title}</h1>
+        <p class="detail__price">${product.price} $</p>
+        <p class="detail__description">${product.description}</p>
+        <button id="add-to-cart-btn" class="detail__add-to-cart">Add to cart</button>
+      </div>
     </div>
   `;
   
-  // Добавляем обработчик кнопки "Добавить в корзину"
   document.getElementById("add-to-cart-btn").addEventListener("click", () => {
-    addToCart(product); // Вызываем функцию добавления в корзину
+    addToCart(product);
   });
 }
 
-// Функция добавления товара в корзину
 function addToCart(product) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  cart.push(product); // Добавляем товар в массив
-  localStorage.setItem("cart", JSON.stringify(cart)); // Сохраняем обновленный массив в localStorage
-  alert(`${product.title} добавлен в корзину`);
+  cart.push(product);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert(`${product.title} added to basket`);
 }
